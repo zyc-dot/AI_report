@@ -15,25 +15,25 @@ app = Flask(__name__)
 semantic_cache = SemanticCache()
 
 # client = Qianfan(
-#     access_key="ALTAKDNn6IRh82PyYPBxFb1T6m",
-#     secret_key="28ffc2fc7a9f4097891b0fa324b064b4",
+#     access_key="your_access_key",
+#     secret_key="your_secret_key",
 # )
 
 # 调用阿里云大模型的API
 client = OpenAI(
-    api_key='sk-3ef85faf997b4bc586855975a20b4823',
+    api_key='your_access_key',
     base_url="https://dashscope.aliyuncs.com/compatible-mode/v1"
 )
 
 # 调用Vanna中的智能体并连接本地数据库
 MyVanna = connect_Vanna.db_connect(
-    model_name='general_staff',
-    api_key='4452c6d4d6764f75b71c27df3a221371',
-    host='kphone01o.mysql.rds.aliyuncs.com',
-    user='aitemp_admin',
-    password='aitemp-admin123',
+    model_name='your_model_name',
+    api_key='your_access_key',
+    host='your_host',
+    user='your_user',
+    password='your_password',
     port=3306,
-    dbname='ks_circle_system'
+    dbname='your_dbname'
 )
 
 
