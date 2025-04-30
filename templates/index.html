@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智能数据分析平台</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/echarts/5.4.3/echarts.min.js"></script>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="history-sidebar">
+                <h2 class="history-title">历史问题</h2>
+                <ul class="history-list" id="historyList"></ul>
+                <button id="clearHistoryButton">清除历史问题</button>
+            </div>
+        </div>
+        <div class="main-content">
+            <h1>智能数据分析平台</h1>
+
+            <div class="input-group">
+                <input type="text" id="questionInput" placeholder="请输入您要分析的问题(需要包含时间范围)">
+                <button id="askButton">开始分析</button>
+                <button id="stopButton">中止运行</button>
+            </div>
+            <div class="time-tip">示例时间格式：2025年、2025年Q1、2025-03、2025-01-01、本年、上月</div>
+
+            <div class="recommend-questions">
+                <div class="tip">试试这些问题：</div>
+                <div class="question-buttons">
+                    <button class="sample-question">各战区本年销售额TOP10</button>
+                    <button class="sample-question">济南分仓去年各月销售额趋势图</button>
+                    <button class="sample-question">今年购买公司产品最多的TOP10客户</button>
+                    <button class="sample-question">以市级为单位展示客户分布情况</button>
+                    <button class="sample-question">2024年销量TOP10的产品</button>
+                    <button class="sample-question">各战区本年度销售额TOP10</button>
+                    <button class="sample-question">各战区本月销售额TOP10</button>
+                    <button class="sample-question">各战区昨日销售额TOP10</button>
+                    <button class="sample-question">各销售员本年度销售额TOP10</button>
+                    <button class="sample-question">各销售员本月销售额TOP10</button>
+                    <button class="sample-question">各销售员昨日销售额TOP10</button>
+                    <button class="sample-question">今年购买公司产品最多的TOP10客户</button>
+                    <button class="sample-question">以市级为单位展示客户分布情况</button>
+                    <button class="sample-question">本年度销量TOP10的产品</button>
+                    <button class="sample-question">本月新进销售人员展示</button>
+                </div>
+            </div>
+
+            <div class="loading">
+                <div class="loader"></div>
+                <div class="loading-text">数据分析中...</div>
+            </div>
+
+            <div class="section">
+                <h2>数据表格</h2>
+                <div id="tableContainer"></div>
+            </div>
+
+            <div class="section">
+                <h2>可视化图表</h2>
+                <div id="chartContainer"></div>
+            </div>
+
+            <div class="section">
+                <h2>分析报告</h2>
+                <div id="analysisContainer"></div>
+                <div class="feedback-buttons">
+                    <button class="feedback-btn yes-btn">👍 有用</button>
+                    <button class="feedback-btn no-btn">👎 没用</button>
+                </div>
+            </div>
+
+            <!-- 反馈弹窗 -->
+            <div id="feedbackModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h3>问题反馈</h3>
+                    <textarea id="feedbackInput" placeholder="请具体描述您遇到的问题..."></textarea>
+                    <button id="submitFeedback">提交反馈</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../static/js/main.js"></script>
+</body>
+</html>
