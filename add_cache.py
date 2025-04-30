@@ -7,7 +7,7 @@ from sqlalchemy import text
 
 def update_cache():
     engine = create_engine(
-        'mysql+pymysql://aitemp_admin:aitemp-admin123@kphone01o.mysql.rds.aliyuncs.com:3306/ai_report_error_feedback')
+        'mysql+pymysql://')
     pd.set_option('display.max_colwidth', None)
 
     semantic_cache = SemanticCache()    # 初始化缓存
